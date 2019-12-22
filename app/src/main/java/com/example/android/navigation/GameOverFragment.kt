@@ -22,7 +22,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
+import androidx.navigation.ui.NavigationUI
 import com.example.android.navigation.databinding.FragmentGameOverBinding
+import kotlinx.android.synthetic.main.fragment_game_over.*
 
 class GameOverFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -30,6 +33,11 @@ class GameOverFragment : Fragment() {
         // Inflate the layout for this fragment
         val binding: FragmentGameOverBinding = DataBindingUtil.inflate(
                 inflater, R.layout.fragment_game_over, container, false)
+
+        binding.tryAgainButton.setOnClickListener {view: View->
+            Navigation.findNavController(view).navigate(GameOverFragmentDirections.actionGameOverFragment2PopIncludingGameFragment())
+        }
+
         return binding.root
     }
 }

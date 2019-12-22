@@ -40,7 +40,6 @@ class TitleFragment : Fragment() {
     // Handles the options item selected logic
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return NavigationUI.onNavDestinationSelected(item!!, view!!.findNavController())||super.onOptionsItemSelected(item)
-
     }
 
 }
